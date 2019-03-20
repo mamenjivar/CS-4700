@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 #var speed = 0
-var speed = 500 # Speed is capped at max speed.
+var speed = 0 # Speed is capped at max speed.
 var max_speed = 500
 var acceleration = 0
 
