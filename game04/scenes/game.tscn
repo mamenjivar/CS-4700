@@ -5,20 +5,13 @@
 
 [node name="Root" type="Node2D" index="0"]
 
-[node name="road_background" type="Sprite" parent="." index="0"]
+[node name="RoadBG" type="Sprite" parent="." index="0"]
 
 texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 640, 960 )
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Player" parent="." index="1" instance=ExtResource( 2 )]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
 
 [node name="Camera" type="Camera2D" parent="." index="2"]
 
