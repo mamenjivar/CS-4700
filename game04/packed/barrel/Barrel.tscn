@@ -7,7 +7,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 40.0357, 52.5363 )
 
-[node name="Barrel" type="RigidBody2D" index="0"]
+[node name="Barrel" type="RigidBody2D"]
 
 input_pickable = false
 collision_layer = 1
