@@ -5,7 +5,7 @@
 
 [node name="Root" type="Node2D" index="0"]
 
-[node name="road_background" type="Sprite" parent="." index="0"]
+[node name="RoadBG" type="Sprite" parent="." index="0"]
 
 texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 640, 960 )
