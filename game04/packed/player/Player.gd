@@ -1,25 +1,19 @@
 extends RigidBody2D
 
-var speed = 500
-var max_speed = 500
-var acceleration = 0
-
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+var speed = 0
+var _max_speed = 500
+var _acceleration = 0
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	# pass
-	set_process(true)
-
-func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
-    speed += acceleration
-    speed = min(speed,max_speed)
+    connect("body_enter",self,"_on_body_enter")
+    set_process(true)
 	
-    if(speed < max_speed):
-        acceleration += delta
+func _process(delta):
+    speed += _acceleration
+    speed = min(speed,_max_speed)
+	
+    if(speed < _max_speed):
+        _acceleration += delta
+		
+func _on_body_enter(other):
+    print(other.get_name())
