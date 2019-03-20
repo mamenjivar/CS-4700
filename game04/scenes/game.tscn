@@ -1,17 +1,20 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/images/road.png" type="Texture" id=1]
-[ext_resource path="res://packed/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/bg.gd" type="Script" id=2]
+[ext_resource path="res://packed/player/Player.tscn" type="PackedScene" id=3]
 
 [node name="Root" type="Node2D" index="0"]
 
 [node name="RoadBG" type="Sprite" parent="." index="0"]
 
 texture = ExtResource( 1 )
+region_enabled = true
 region_rect = Rect2( 0, 0, 640, 960 )
-_sections_unfolded = [ "Transform", "Z Index" ]
+script = ExtResource( 2 )
+_sections_unfolded = [ "Region", "Transform", "Z Index" ]
 
-[node name="Player" parent="." index="1" instance=ExtResource( 2 )]
+[node name="Player" parent="." index="1" instance=ExtResource( 3 )]
 
 [node name="Camera" type="Camera2D" parent="." index="2"]
 
