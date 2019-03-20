@@ -10,7 +10,8 @@ config_version=3
 
 [application]
 
-config/name="Assignment04"
+config/name="Pixel Racer"
+run/main_scene="res://scenes/game.tscn"
 config/icon="res://icon.png"
 
 [rendering]
