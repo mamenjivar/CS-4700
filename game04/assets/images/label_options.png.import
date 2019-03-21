@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/road.png-307c3924a59e8085aee851d86b99caa4.stex"
+path="res://.import/label_options.png-1fa12c72ce83593c96cda68e2ea67288.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/road.png"
-dest_files=[ "res://.import/road.png-307c3924a59e8085aee851d86b99caa4.stex" ]
+source_file="res://assets/images/label_options.png"
+dest_files=[ "res://.import/label_options.png-1fa12c72ce83593c96cda68e2ea67288.stex" ]
 
 [params]
 
@@ -19,9 +19,9 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=0
 flags/filter=true
-flags/mipmaps=true
+flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true
