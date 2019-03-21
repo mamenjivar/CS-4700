@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 45.7423, 93.2471 )
 
-[node name="Enemy" type="RigidBody2D"]
+[node name="Enemy" type="RigidBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -17,7 +17,7 @@ mode = 3
 mass = 1.0
 friction = 1.0
 bounce = 0.0
-gravity_scale = 0.0
+gravity_scale = 1.0
 custom_integrator = false
 continuous_cd = 0
 contacts_reported = 0
@@ -29,7 +29,6 @@ linear_damp = -1.0
 angular_velocity = 0.0
 angular_damp = -1.0
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -37,7 +36,6 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
