@@ -4,6 +4,7 @@ var turn_speed = 5
 var _max_speed = 500
 var _acceleration = 0
 var _direction = 0
+
 func _ready():
     connect("body_enter",self,"_on_body_enter")
     set_process(true)
