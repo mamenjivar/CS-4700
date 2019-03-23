@@ -1,6 +1,6 @@
 extends RigidBody2D
 var speed = 0
-var turn_speed = 5
+var turn_speed = 1
 var _max_speed = 500
 var _acceleration = 0
 var _direction = 0
