@@ -12,7 +12,7 @@ func _ready():
 func _on_timeout():
 	var random = rand_range(0, objects.size())
 	var item = objects[random].instance()
-	random = rand_range(100, -550)
+	random = rand_range(-260, 260)
 	
 	item.set_position(Vector2(random, -550))
 	get_parent().add_child(item)

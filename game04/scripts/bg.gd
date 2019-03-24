@@ -3,7 +3,6 @@ extends Sprite
 onready var player = get_node("../Player")
 var y = 0
 
-
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
