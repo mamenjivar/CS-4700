@@ -36,13 +36,8 @@ func _input(event):
 	if(event.is_action("ui_left")):
 		direction = -10 # change for speed
 	elif(event.is_action("ui_right")):
-<<<<<<< HEAD
 		direction = 10
-	elif(event.is_action_released("ui_left") or event.is_action_released("ui_right")):
-=======
-		direction = 1
-	elif(event.is_action_released("ui_left") or event.is_action_released("ui_right") or event.is_action("ui_up") or event.is_action("ui_down")):
->>>>>>> phase8Integrated
+	else:
 		direction = 0
 
 func _process(delta):
@@ -63,14 +58,12 @@ func _process(delta):
 func _on_body_enter(other):
 	print("Collision!")
 	speed = 0
-<<<<<<< HEAD
 	set_process(false)
 
 func _on_Player_body_entered(body):
 	print("Collision with " + body.get_name())
 	pass # Replace with function body.
-=======
+
 	is_game_over = true;
 	collision_sound_player.play(0.0)
 	game_over_label.percent_visible = 100
->>>>>>> phase8Integrated
