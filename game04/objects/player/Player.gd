@@ -17,9 +17,9 @@ func _ready():
 func _input(event):
 	direction = 0
 	if(event.is_action("ui_left")):
-		direction = -1
+		direction = -10
 	elif(event.is_action("ui_right")):
-		direction = 1
+		direction = 10 # CHANGE FOR SPEED
 	elif(event.is_action_released("ui_left") or event.is_action_released("ui_right")):
 		direction = 0
 

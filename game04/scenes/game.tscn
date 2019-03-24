@@ -1,9 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/images/road.png" type="Texture" id=1]
 [ext_resource path="res://scripts/BG.gd" type="Script" id=2]
 [ext_resource path="res://objects/player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scripts/SpawnTimer.gd" type="Script" id=4]
+[ext_resource path="res://assets/images/roadLights.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 44.6323, 476.226 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 61.009, 496.467 )
 
 [node name="Root" type="Node2D"]
 
@@ -26,4 +33,24 @@ current = true
 wait_time = 3.0
 autostart = true
 script = ExtResource( 4 )
+
+[node name="collisionRight" type="StaticBody2D" parent="."]
+
+[node name="wallRight" type="Sprite" parent="collisionRight"]
+position = Vector2( 372, 5 )
+texture = ExtResource( 5 )
+
+[node name="wallShapeRight" type="CollisionShape2D" parent="collisionRight"]
+position = Vector2( 365.513, 0.363159 )
+shape = SubResource( 1 )
+
+[node name="collisionLeft" type="StaticBody2D" parent="."]
+
+[node name="wallLeft" type="Sprite" parent="collisionLeft"]
+position = Vector2( -372.224, -2.58847 )
+texture = ExtResource( 5 )
+
+[node name="wallShapeLeft" type="CollisionShape2D" parent="collisionLeft"]
+position = Vector2( -381.543, 15.5309 )
+shape = SubResource( 2 )
 

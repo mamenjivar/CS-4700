@@ -52,7 +52,7 @@ margin_right = 537.0
 margin_bottom = 193.0
 icon = ExtResource( 4 )
 
-[node name="btn_newGame" type="Button" parent="HBoxContainer/VBoxContainer/MenuOptions"]
+[node name="btn_playVariant" type="Button" parent="HBoxContainer/VBoxContainer/MenuOptions"]
 margin_top = 223.0
 margin_right = 537.0
 margin_bottom = 265.0
