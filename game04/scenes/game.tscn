@@ -1,10 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://assets/images/road.png" type="Texture" id=1]
+[ext_resource path="res://assets/images/roadUpdateSideLights.png" type="Texture" id=1]
 [ext_resource path="res://scripts/BG.gd" type="Script" id=2]
-[ext_resource path="res://objects/player/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scripts/SpawnTimer.gd" type="Script" id=4]
-[ext_resource path="res://assets/images/roadLights.png" type="Texture" id=5]
+[ext_resource path="res://scripts/SpawnTimer.gd" type="Script" id=3]
+[ext_resource path="res://scenes/KinematicBody2D.gd" type="Script" id=4]
+[ext_resource path="res://icon.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 44.6323, 476.226 )
@@ -12,19 +12,18 @@ extents = Vector2( 44.6323, 476.226 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 61.009, 496.467 )
 
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 50.1511, 96.1786 )
+
 [node name="Root" type="Node2D"]
 
 [node name="RoadBG" type="Sprite" parent="."]
+position = Vector2( 6.98432, 4.8353 )
+scale = Vector2( 0.994963, 0.998881 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 640, 960 )
 script = ExtResource( 2 )
-
-[node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 9.25305, 203.568 )
-z_index = 1
-contacts_reported = 1
-contact_monitor = true
 
 [node name="Camera" type="Camera2D" parent="."]
 current = true
@@ -32,25 +31,28 @@ current = true
 [node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
-script = ExtResource( 4 )
+script = ExtResource( 3 )
 
 [node name="collisionRight" type="StaticBody2D" parent="."]
 
-[node name="wallRight" type="Sprite" parent="collisionRight"]
-position = Vector2( 372, 5 )
-texture = ExtResource( 5 )
-
 [node name="wallShapeRight" type="CollisionShape2D" parent="collisionRight"]
-position = Vector2( 365.513, 0.363159 )
+position = Vector2( 252.689, 15.4063 )
 shape = SubResource( 1 )
 
 [node name="collisionLeft" type="StaticBody2D" parent="."]
 
-[node name="wallLeft" type="Sprite" parent="collisionLeft"]
-position = Vector2( -372.224, -2.58847 )
+[node name="wallShapeLeft" type="CollisionShape2D" parent="collisionLeft"]
+position = Vector2( -268.719, 15.5309 )
+shape = SubResource( 2 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="Player" type="Sprite" parent="KinematicBody2D"]
+position = Vector2( 8.80084, 202.937 )
 texture = ExtResource( 5 )
 
-[node name="wallShapeLeft" type="CollisionShape2D" parent="collisionLeft"]
-position = Vector2( -381.543, 15.5309 )
-shape = SubResource( 2 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 8.80084, 202.937 )
+shape = SubResource( 3 )
 

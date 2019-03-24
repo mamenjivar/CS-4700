@@ -1,6 +1,6 @@
 extends Sprite
 # road
-onready var player = get_node("../KinematicBody2D")
+#onready var player = get_node("../KinematicBody2D")
 var y = 0
 
 
@@ -13,5 +13,5 @@ func _process(delta):
 	# Called every frame. Delta is time since last frame.
 	# Update game logic here.
 	#y -= player.speed * delta
-	y -= 200 * delta
-	set_region_rect(Rect2(0, y, 640, 960))
+	y -= 100 * delta
+	set_region_rect(Rect2(10, y, 100, 960))
