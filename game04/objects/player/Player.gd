@@ -5,7 +5,7 @@ var collision_sound_player = null
 var game_over_label = null
 
 var speed = 500
-var turn_speed = 0.75
+var turn_speed = 1
 var max_speed = 1000
 var acceleration = 0
 var direction = 0

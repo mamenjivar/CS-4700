@@ -4,20 +4,19 @@
 [ext_resource path="res://assets/images/roadblock.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 3.04936, 16.3676 )
+extents = Vector2( 2.77661, 12.4136 )
 
 [node name="Roadblock" type="RigidBody2D"]
-position = Vector2( 0.814514, -7.33054 )
+position = Vector2( 1.81723, -4.13015 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -8.12468, 7.3509 )
+scale = Vector2( 0.910718, 0.792932 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 1.11016, -9.50104 )
+position = Vector2( -7.40138, -0.215702 )
 scale = Vector2( 27.0144, 1.634 )
 shape = SubResource( 1 )
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://scripts/Menu.gd" type="Script" id=1]
+[ext_resource path="res://misc_scripts/Menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/mainMenu_blackBackground.png" type="Texture" id=2]
 [ext_resource path="res://assets/images/mainMenu_nightRider.png" type="Texture" id=3]
 [ext_resource path="res://assets/images/mainMenu_playClone.png" type="Texture" id=4]

@@ -1,17 +1,18 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/images/roadUpdateSideLights.png" type="Texture" id=1]
-[ext_resource path="res://scripts/BG.gd" type="Script" id=2]
-[ext_resource path="res://scripts/SpawnTimer.gd" type="Script" id=3]
-[ext_resource path="res://scripts/KinematicBody2D.gd" type="Script" id=4]
+[ext_resource path="res://misc_scripts/BG.gd" type="Script" id=2]
+[ext_resource path="res://misc_scripts/SpawnTimer.gd" type="Script" id=3]
+[ext_resource path="res://misc_scripts/KinematicBody2D.gd" type="Script" id=4]
 [ext_resource path="res://icon.png" type="Texture" id=5]
 [ext_resource path="res://assets/sound/superboy.wav" type="AudioStream" id=6]
+[ext_resource path="res://misc_scripts/ElapsedTimer.gd" type="Script" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 44.6323, 476.226 )
+extents = Vector2( 34.2737, 476.226 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 61.009, 496.467 )
+extents = Vector2( 46.2764, 496.467 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 50.1511, 96.1786 )
@@ -30,7 +31,7 @@ script = ExtResource( 2 )
 current = true
 
 [node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 2.0
 autostart = true
 script = ExtResource( 3 )
 
@@ -61,4 +62,16 @@ shape = SubResource( 3 )
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 autoplay = true
+
+[node name="GameOverLabel" type="RichTextLabel" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TimeLabel" type="RichTextLabel" parent="."]
+margin_left = -187.627
+margin_top = 382.147
+margin_right = -34.6267
+margin_bottom = 422.147
+text = "Time: 00 : 00"
+script = ExtResource( 7 )
 

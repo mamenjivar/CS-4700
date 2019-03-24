@@ -12,7 +12,11 @@ func _ready():
 func _on_timeout():
 	var random = rand_range(0, objects.size())
 	var item = objects[random].instance()
-	random = rand_range(-260, 260)
+	
+	if (random == 3):
+		random == rand_range(-10, 10)
+	else:
+		random = rand_range(-200, 200)
 	
 	item.set_position(Vector2(random, -550))
 	get_parent().add_child(item)
