@@ -13,6 +13,8 @@ var player = null
 var speed = 1
 
 func _ready():
+    var random_texture = textures[rand_range(0,textures.size())]
+    get_node("Sprite").set_texture(random_texture)
     player = get_node("../Player")
     add_to_group("block")
     set_process(true)

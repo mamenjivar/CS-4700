@@ -1,4 +1,5 @@
 extends RigidBody2D
+
 var player = null
 var speed = 1
 
