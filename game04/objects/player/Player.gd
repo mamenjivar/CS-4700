@@ -1,18 +1,20 @@
 extends RigidBody2D
 
+var collision_sound_player = null
+
 var speed = 500
 var turn_speed = 0.75
 var max_speed = 1000
 var acceleration = 0
 var direction = 0
-
-var points = 0
-var point_multiplier = 0.2
+var time_elapsed = 0
 
 func _ready():
 	connect("body_enter",self,"_on_body_enter")
 	set_process(true)
 	set_process_input(true)
+	collision_sound_player = get_node("../CollisionPlayer")
+	
 
 func _input(event):
 	direction = 0
@@ -26,7 +28,6 @@ func _input(event):
 func _process(delta):
 	speed += acceleration
 	speed = min(speed,max_speed)
-	points += 1 * point_multiplier
 	
 	if(speed < max_speed):
 		acceleration += delta
@@ -34,5 +35,6 @@ func _process(delta):
 	set_position(get_position() + Vector2(direction * turn_speed, 0))
 
 func _on_body_enter(other):
+	print("LOL")
 	speed = 0
-	set_process(false)
+	collision_sound_player.play("res://assets/sounds/collision.wav")

@@ -1,7 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://objects/player/Player.gd" type="Script" id=1]
-[ext_resource path="res://assets/car.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/player.png" type="Texture" id=2]
+
+
 
 
 
