@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/Menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/mainMenu_blackBackground.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/images/mainMenu_playClone.png" type="Texture" id=4]
 [ext_resource path="res://assets/images/mainMenu_playVariant.png" type="Texture" id=5]
 [ext_resource path="res://assets/images/characters.png" type="Texture" id=6]
+[ext_resource path="res://assets/sound/dash_runner.wav" type="AudioStream" id=7]
 
 [node name="MainMenu" type="MarginContainer"]
 anchor_right = 1.0
@@ -52,7 +53,7 @@ margin_right = 537.0
 margin_bottom = 193.0
 icon = ExtResource( 4 )
 
-[node name="btn_newGame" type="Button" parent="HBoxContainer/VBoxContainer/MenuOptions"]
+[node name="btn_playVariant" type="Button" parent="HBoxContainer/VBoxContainer/MenuOptions"]
 margin_top = 223.0
 margin_right = 537.0
 margin_bottom = 265.0
@@ -77,4 +78,8 @@ margin_top = 130.0
 margin_right = 654.0
 margin_bottom = 469.0
 texture = ExtResource( 6 )
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+autoplay = true
 
