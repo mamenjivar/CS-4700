@@ -8,6 +8,7 @@ extents = Vector2( 10.5932, 14.3994 )
 
 [node name="Car" type="RigidBody2D"]
 position = Vector2( -4, 26.035 )
+gravity_scale = 3.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
