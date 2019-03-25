@@ -4,10 +4,10 @@
 [ext_resource path="res://assets/images/car.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 45.7423, 93.2471 )
+extents = Vector2( 45.7423, 87.4817 )
 
 [node name="Player" type="RigidBody2D"]
-position = Vector2( 4.10107, -4.10107 )
+position = Vector2( 4.10107, -5.46142 )
 mode = 3
 script = ExtResource( 1 )
 __meta__ = {
