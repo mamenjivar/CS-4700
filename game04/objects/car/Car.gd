@@ -11,4 +11,14 @@ var textures = [
 
 func _ready():
 	get_node("Sprite").set_texture(textures[rand_range(0, textures.size())])
+	self.set_contact_monitor(true)
+	self.connect("body_enter", self, "_on_collision")
+	
 	set_process(true)
+	print("Spawned: Car")
+	
+func _on_collision(other):
+	print("Car collision!")
+	
+	if(other.is_in_group("player")):
+		print("Game over!")

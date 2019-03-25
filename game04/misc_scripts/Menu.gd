@@ -9,12 +9,12 @@ func _ready():
 
 # Plays the Night Driver Clone
 func playClone():
-	get_tree().change_scene("res://scenes/clone.tscn")
+	get_tree().change_scene("res://scenes/Clone.tscn")
 	pass
 
 # Plays the Night Driver Variant
 func playVariant():
-	get_tree().change_scene("res://scenes/variant.tscn")
+	get_tree().change_scene("res://scenes/Variant.tscn")
 	pass
 	
 # quits game

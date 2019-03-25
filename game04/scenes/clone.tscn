@@ -3,9 +3,9 @@
 [ext_resource path="res://assets/images/roadUpdateSideLights.png" type="Texture" id=1]
 [ext_resource path="res://misc_scripts/BG.gd" type="Script" id=2]
 [ext_resource path="res://misc_scripts/SpawnTimer.gd" type="Script" id=3]
-[ext_resource path="res://misc_scripts/KinematicBody2D.gd" type="Script" id=4]
+[ext_resource path="res://objects/player/PlayerMovement.gd" type="Script" id=4]
 [ext_resource path="res://icon.png" type="Texture" id=5]
-[ext_resource path="res://assets/sound/superboy.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/sounds/superboy.wav" type="AudioStream" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 44.6323, 476.226 )
@@ -46,15 +46,15 @@ shape = SubResource( 1 )
 position = Vector2( -268.719, 15.5309 )
 shape = SubResource( 2 )
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+[node name="Player" type="KinematicBody2D" parent="."]
 script = ExtResource( 4 )
 
-[node name="Player" type="Sprite" parent="KinematicBody2D"]
+[node name="PlayerSprite" type="Sprite" parent="Player"]
 position = Vector2( 9.18417, 207.134 )
 scale = Vector2( 0.239273, 0.235756 )
 texture = ExtResource( 5 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2( 8.80084, 202.937 )
 shape = SubResource( 3 )
 
