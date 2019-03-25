@@ -1,7 +1,7 @@
 extends Sprite
 
 var y = 0
-var speed_constant = 750 # Higher means faster y movement.
+var speed_constant = 800 # Higher means faster y movement.
 onready var player = get_node("../KinematicBody2D") # road
 
 func _ready():

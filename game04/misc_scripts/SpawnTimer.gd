@@ -13,7 +13,7 @@ var objects = [
 ]
 
 func _ready():
-	connect("timeout", self, "_on_timeout")
+	self.connect("timeout", self, "_on_timeout")
 
 # Called after every cycle.
 func _on_timeout():
