@@ -6,7 +6,7 @@ var game_over_label = null
 
 func _ready():
 	self.add_to_group("player")
-	self.connect("body_enter", self, "_on_body_enter")
+	self.connect("body_entered", self, "_on_body_enter")
 	
 	collision_sound_player = get_node("../CollisionPlayer")
 	collision_sound_player.stream = load("res://assets/sounds/collision.wav")
@@ -16,6 +16,16 @@ func _ready():
 	
 	set_process(true)
 	set_process_input(true)
+
+func _process(delta):
+	# Called every frame. Delta is time since last frame.
+	# Update game logic here.
+	
+	if (is_game_over):
+		if (game_over_label.percent_visible == 100):
+			game_over_label.percent_visible = 0
+		else:
+			game_over_label.percent_visible = 100
 
 func _on_body_enter(other):
 	is_game_over = true;

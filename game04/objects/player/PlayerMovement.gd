@@ -5,6 +5,10 @@ var speedX = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
+	
+func _fixed_process(delta):
+    # Called every frame
+    print("LOL")
 
 func _physics_process(delta):
 	var moveBy = Vector2(speedX, 0)
