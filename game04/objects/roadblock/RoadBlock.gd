@@ -23,5 +23,5 @@ func _on_Area2D_body_entered(other):
 
 	if(object_name == "Player"):
 		print("~~~Game over!~~~")
-		#player.is_game_over = true
+		player.is_game_over = true
 		collision_sound_player.play(0.0)

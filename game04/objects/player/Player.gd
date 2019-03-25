@@ -1,33 +1,32 @@
-extends Sprite
+extends KinematicBody2D
 
+var speedX = 0
+var player = null
 var is_game_over = false
 var game_over_label = null
+var game_over_text = "GAME OVER!"
 
+# Called when the node enters the scene tree for the first time.
 func _ready():
-	self.connect("body_entered", self, "_on_body_enter")
 	game_over_label = get_node("../GameOverLabel")
+	pass
+
+func _physics_process(delta):
+	if is_game_over:
+		speedX = 0
+		game_over_label.text = game_over_text
+		return
 	
-	set_process(true)
-	set_process_input(true)
-
-func _process(delta):
-	# Called every frame. Delta is time since last frame.
-	# Update game logic here.
-
-	if (is_game_over):
-		if (game_over_label.percent_visible == 100):
-			game_over_label.percent_visible = 0
-		else:
-			game_over_label.percent_visible = 100
-
-func _on_body_enter(other):
-	is_game_over = true;
-	#collision_sound_player.play(0.0)
-	game_over_label.percent_visible = 100
-
-	print("Collision with " + other.get_name() + "!")
-	set_process(false)
-
-func _game_over():
-	is_game_over = true;
-	game_over_label.percent_visible = 100
+	var moveBy = Vector2(speedX, 0)
+	
+	if Input.is_key_pressed(KEY_LEFT) or Input.is_key_pressed(KEY_A):
+		speedX = -5
+		moveBy = Vector2(speedX, 0)
+	elif Input.is_key_pressed(KEY_RIGHT) or Input.is_key_pressed(KEY_D):
+		speedX = 5
+		moveBy = Vector2(speedX, 0)
+	elif Input.is_key_pressed(KEY_DOWN) or Input.is_key_pressed(KEY_UP) or Input.is_key_pressed(KEY_S) or Input.is_key_pressed(KEY_W):
+		speedX = 0
+		moveBy = Vector2(speedX, 0)
+	
+	self.move_and_collide(moveBy)
