@@ -1,0 +1,16 @@
+[gd_scene format=2]
+
+[node name="HUD" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_left = -333.111
+margin_top = -342.364
+margin_right = 423.889
+margin_bottom = 218.636
+text = "DODGE THE LIGHTS"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="Timer" type="Timer" parent="."]
+
