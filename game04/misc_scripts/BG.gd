@@ -13,5 +13,5 @@ func _process(delta):
 	# Called every frame. Delta is time since last frame.
 	# Update game logic here.
 	
-	y -= speed_constant * delta
+	y -= 500 * delta
 	set_region_rect(Rect2(0, y, 640, 960))
