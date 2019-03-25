@@ -1,5 +1,9 @@
 extends RigidBody2D
 
+var player = null
+var object_name = null
+var collision_sound_player = null
+
 var textures = [
 	preload("res://assets/images/car1.png"),
 	preload("res://assets/images/car2.png"),
@@ -10,15 +14,22 @@ var textures = [
 ]
 
 func _ready():
-	get_node("Sprite").set_texture(textures[rand_range(0, textures.size())])
+	player = get_node("../Player")
+	self.get_node("Sprite").set_texture(textures[rand_range(0, textures.size())])
 	self.set_contact_monitor(true)
-	self.connect("body_entered", self, "_on_collision")
-	
+
+	collision_sound_player = get_node("./CollisionPlayer")
+	collision_sound_player.stream = load("res://assets/sounds/collision.wav")
+	#collision_sound_player.play(0.0)
+
 	set_process(true)
 	print("Spawned: Car")
-	
-func _on_collision(other):
-	print("Car collision!")
-	
-	if(other.is_in_group("player")):
-		print("Game over!")
+
+func _on_Area2D_body_entered(other):
+	object_name = other.get_name()
+	print("Car collision with " + object_name + "!")
+
+	if(object_name == "Player"):
+		print("~~~Game over!~~~")
+		#player._game_over()
+		collision_sound_player.play(0.0)
