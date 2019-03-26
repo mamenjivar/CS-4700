@@ -1,15 +1,14 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/images/roadUpdateSideLights.png" type="Texture" id=1]
 [ext_resource path="res://misc_scripts/BG.gd" type="Script" id=2]
 [ext_resource path="res://misc_scripts/SpawnTimer.gd" type="Script" id=3]
-[ext_resource path="res://objects/player/Player.gd" type="Script" id=4]
-[ext_resource path="res://icon.png" type="Texture" id=5]
-[ext_resource path="res://misc_scripts/ElapsedTimer.gd" type="Script" id=6]
-[ext_resource path="res://assets/sounds/superboy.wav" type="AudioStream" id=7]
-[ext_resource path="res://misc_scripts/AudioLoop.gd" type="Script" id=8]
+[ext_resource path="res://assets/sounds/superboy.wav" type="AudioStream" id=4]
+[ext_resource path="res://objects/player/Player.gd" type="Script" id=5]
+[ext_resource path="res://icon.png" type="Texture" id=6]
+[ext_resource path="res://misc_scripts/ElapsedTimer.gd" type="Script" id=7]
 
-[sub_resource type="GDScript" id=4]
+[sub_resource type="GDScript" id=1]
 script/source = "extends StaticBody2D
 
 var player = null
@@ -37,13 +36,13 @@ func _on_Area2D_body_entered(other):
 		player.is_game_over = true
 		collision_sound_player.play(0.0)"
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 34.2737, 476.226 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 46.2764, 496.467 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 50.1511, 96.1786 )
 
 [node name="Root" type="Node2D"]
@@ -64,13 +63,17 @@ wait_time = 2.0
 autostart = true
 script = ExtResource( 3 )
 
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
+
 [node name="RightCollision" type="StaticBody2D" parent="."]
 collision_layer = 5121
-script = SubResource( 4 )
+script = SubResource( 1 )
 
 [node name="RightWallShape" type="CollisionShape2D" parent="RightCollision"]
 position = Vector2( 252.689, 15.4063 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="CollisionPlayer" type="AudioStreamPlayer" parent="RightCollision"]
 
@@ -78,19 +81,19 @@ shape = SubResource( 1 )
 
 [node name="LeftWallCollision" type="CollisionShape2D" parent="LeftCollision"]
 position = Vector2( -268.719, 15.5309 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
-script = ExtResource( 4 )
+script = ExtResource( 5 )
 
 [node name="PlayerSprite" type="Sprite" parent="Player"]
 position = Vector2( 9.18417, 207.134 )
 scale = Vector2( 0.239273, 0.235756 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2( 8.80084, 202.937 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="GameOverLabel" type="RichTextLabel" parent="."]
 margin_left = -40.0844
@@ -104,10 +107,5 @@ margin_top = 382.147
 margin_right = -34.6267
 margin_bottom = 422.147
 text = "Time: 00 : 00"
-script = ExtResource( 6 )
-
-[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 7 )
-autoplay = true
-script = ExtResource( 8 )
+script = ExtResource( 7 )
 
